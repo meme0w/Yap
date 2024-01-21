@@ -21,7 +21,7 @@ impl ProgressReporter {
 
 impl Reporter for ProgressReporter {
     fn setup(&self, max_progress: Option<u64>, _message: &str) {
-        // Здесь вы можете добавить код для настройки отчета о прогрессе.
+        
         let mut total_size = self.total_size.lock().unwrap();
         *total_size = max_progress;
     }
@@ -40,11 +40,11 @@ impl Reporter for ProgressReporter {
     }
 
     fn set_message(&self, _message: &str) {
-        // Здесь вы можете добавить код для обновления сообщения о прогрессе.
+       
     }
 
     fn done(&self) {
-        // Здесь вы можете добавить код для завершения отчета о прогрессе.
+        
         println!("Загрузка файла завершена!");
     }
 }
