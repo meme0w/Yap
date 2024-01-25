@@ -51,10 +51,10 @@ impl Reporter for ProgressReporter {
 
 fn main() {
 
-    // let terminalUrl: String = std::env::args().nth(1).expect("Не передан URL файла");
+    let terminalUrl: String = std::env::args().nth(1).expect("Не передан URL файла");
 
     let downloads = vec![
-        Download::new("https://drive.google.com/uc?export=download&id=1pmU0hNa6oQZuyPBC39tUKtJkHX7epYOX")
+        Download::new(&terminalUrl)
             .progress(Arc::new(ProgressReporter::new())),
     ];
 
